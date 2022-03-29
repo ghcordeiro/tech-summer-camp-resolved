@@ -1,7 +1,12 @@
+import { stringify } from "querystring";
+
 interface IQuadroPunnettResponse {
-  quadro: Array<string>;
-  castanho: number;
-  azul: number;
+  Pai: string;
+  Mae: string;
+  Quadro: string;
+  // quadro: Array<string>;
+  Castanho: number;
+  Azul: number;
 }
 
 /**
@@ -45,5 +50,11 @@ export const quadroPunnett = (
     }
   });
 
-  return { quadro: quadroSorted, castanho: castanho, azul: azul };
+  return {
+    Pai: gametaPai,
+    Mae: gametaMae,
+    Quadro: quadroSorted.join(", "),
+    Castanho: castanho,
+    Azul: azul,
+  };
 };

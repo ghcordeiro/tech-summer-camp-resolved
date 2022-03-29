@@ -12,5 +12,7 @@
  */
 
 export const palavraChave = (texto: string, palavraChave: string): number => {
-  // TODO: Implementar a função e testar a chamada dela no index.ts
-}
+  return (
+    texto.toLocaleLowerCase().split(palavraChave.toLocaleLowerCase()).length - 1
+  );
+};
